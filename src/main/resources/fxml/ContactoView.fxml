@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:id="view" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.5, 0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+        <items>
+            <TitledPane fx:id="telefonosPane" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" minHeight="120.0" text="Teléfonos">
+               <content>
+                  <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="100.0" text="Número" />
+                              <TableColumn prefWidth="100.0" text="Tipo" />
+                           </columns>
+                        </TableView>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="70.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="aniadirTelefonoButton" mnemonicParsing="false" onAction="#onAniadirTelefonoAction" prefWidth="60.0" text="Añadir" />
+                              <Button fx:id="eliminarTelefonoButton" mnemonicParsing="false" onAction="#onEliminarTelefonoAction" prefWidth="60.0" text="Eliminar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TitledPane>
+            <TitledPane fx:id="correosPane" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" minHeight="120.0" text="Direcciones de correo">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="250.0" text="E-mail" />
+                           </columns>
+                        </TableView>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="70.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="aniadirCorreoButton" mnemonicParsing="false" onAction="#onAniadirCorreoAction" prefWidth="60.0" text="Añadir" />
+                              <Button fx:id="eliminarCorreoButton" mnemonicParsing="false" onAction="#onEliminarCorreoAction" prefWidth="60.0" text="Eliminar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TitledPane>
+            <TitledPane fx:id="websPane" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" minHeight="120.0" text="Webs">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="250.0" text="URL" />
+                           </columns>
+                        </TableView>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="70.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="aniadirWebButton" mnemonicParsing="false" onAction="#onAniadirWebAction" prefWidth="60.0" text="Añadir" />
+                              <Button fx:id="eliminarWebButton" mnemonicParsing="false" onAction="#onEliminarWebAction" prefWidth="60.0" text="Eliminar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TitledPane>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </SplitPane>
+   </children>
+</VBox>
