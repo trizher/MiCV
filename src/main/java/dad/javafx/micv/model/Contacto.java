@@ -1,4 +1,4 @@
-package dad.javafx.micv.models;
+package dad.javafx.micv.model;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;

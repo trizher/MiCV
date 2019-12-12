@@ -1,4 +1,4 @@
-package dad.javafx.micv.personal;
+package dad.javafx.micv.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import dad.javafx.micv.models.CV;
-import dad.javafx.micv.models.Nacionalidad;
-import dad.javafx.micv.models.Personal;
+import dad.javafx.micv.model.CV;
+import dad.javafx.micv.model.Nacionalidad;
+import dad.javafx.micv.model.Personal;
 import dad.javafx.utils.LectorCSV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import dad.javafx.micv.models.Nacionalidad;
+import dad.javafx.micv.model.Nacionalidad;
 
 public class LectorCSV {
 	public static final String SEPARATOR = "\n";

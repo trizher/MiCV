@@ -1,4 +1,4 @@
-package dad.javafx.micv.models;
+package dad.javafx.micv.model;
 
 import java.time.LocalDate;
 

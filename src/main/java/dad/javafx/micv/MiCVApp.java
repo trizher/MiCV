@@ -1,6 +1,6 @@
 package dad.javafx.micv;
 
-import dad.javafx.micv.raiz.MainController;
+import dad.javafx.micv.controller.MainController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

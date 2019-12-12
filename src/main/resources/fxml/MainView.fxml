@@ -6,6 +6,8 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.VBox?>
 
@@ -18,15 +20,36 @@
               <MenuItem fx:id="nuevoMenuItem" mnemonicParsing="false" onAction="#onNuevoAction" text="Nuevo">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/nuevo.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
                   <MenuItem fx:id="abrirMenuItem" mnemonicParsing="false" onAction="#onAbrirAction" text="Abrir...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/abrir.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
                   <MenuItem fx:id="guardarMenuItem" mnemonicParsing="false" onAction="#onGuardarAction" text="Guardar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/guardar.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
                   <MenuItem fx:id="guardarComoMenuItem" mnemonicParsing="false" onAction="#onGuardarComoAction" text="Guardar como..." />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem fx:id="salirMenuItem" mnemonicParsing="false" onAction="#onSalirAction" text="Salir">

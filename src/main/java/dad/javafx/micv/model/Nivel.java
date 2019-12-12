@@ -1,4 +1,4 @@
-package dad.javafx.micv.models;
+package dad.javafx.micv.model;
 
 public enum Nivel {
 	BASICO,

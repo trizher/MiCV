@@ -1,12 +1,9 @@
-package dad.javafx.micv.raiz;
+package dad.javafx.micv.controller;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import dad.javafx.micv.contacto.ContactoController;
-import dad.javafx.micv.formacion.FormacionController;
-import dad.javafx.micv.personal.PersonalController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +17,8 @@ public class MainController implements Initializable{
 	private PersonalController personalController = new PersonalController();
 	private FormacionController formacionController = new FormacionController();
 	private ContactoController contactoController = new ContactoController();
+	private ExperienciaController experienciaController = new ExperienciaController();
+	private ConocimientoController conocimientoController = new ConocimientoController();
 	
     @FXML
     private VBox root;
@@ -68,6 +67,8 @@ public class MainController implements Initializable{
 		personalTab.setContent(personalController.getView());
 		formacionTab.setContent(formacionController.getView());
 		contactoTab.setContent(contactoController.getView());
+		experienciaTab.setContent(experienciaController.getView());
+		conocimientosTab.setContent(conocimientoController.getView());
 		
 		
 	}
@@ -105,7 +106,7 @@ public class MainController implements Initializable{
 
     @FXML
     void onSalirAction(ActionEvent event) {
-
+    	 
     }
 
 }

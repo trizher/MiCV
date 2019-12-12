@@ -1,11 +1,11 @@
-package dad.javafx.micv.formacion;
+package dad.javafx.micv.controller;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import dad.javafx.micv.models.Titulo;
+import dad.javafx.micv.model.Experiencia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,25 +15,25 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
 
-public class FormacionController implements Initializable{
+public class ExperienciaController implements Initializable{
 
 	@FXML
 	private HBox view;
 
 	@FXML
-	private TableView<Titulo> formacionTable;
+	private TableView<Experiencia> experienciaTable;
 
 	@FXML
-	private TableColumn<Titulo, LocalDate> desdeColumn;
+	private TableColumn<Experiencia, LocalDate> desdeColumn;
 
 	@FXML
-	private TableColumn<Titulo, LocalDate> hastaColumn;
+	private TableColumn<Experiencia, LocalDate> hastaColumn;
 
 	@FXML
-	private TableColumn<Titulo, String> denominacionColumn;
+	private TableColumn<Experiencia, String> denominacionColumn;
 
 	@FXML
-	private TableColumn<Titulo, String> organizadorColumn;
+	private TableColumn<Experiencia, String> empleadorColumn;
 
 	@FXML
 	private Button aniadirButton;
@@ -41,8 +41,8 @@ public class FormacionController implements Initializable{
 	@FXML
 	private Button eliminarButton;
 	
-	public FormacionController() throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FormacionView.fxml"));
+	public ExperienciaController() throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ExperienciaView.fxml"));
 		loader.setController(this);
 		loader.load();
 	}
@@ -50,22 +50,23 @@ public class FormacionController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		
 	}
-	
+
 	public HBox getView() {
 		return view;
 	}
 
-
 	@FXML
-	void onAniadirButton(ActionEvent event) {
+	void onAniadirAction(ActionEvent event) {
 
 	}
 
 	@FXML
-	void onEliminarButton(ActionEvent event) {
+	void onEliminarAction(ActionEvent event) {
 
 	}
+
 
 
 }
