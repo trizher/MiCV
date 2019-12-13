@@ -83,7 +83,6 @@ public class IdiomaDialogController extends Dialog<Conocimiento> implements Init
 	
 		Node crearButton = getDialogPane().lookupButton(CREAR_BUTTON_TYPE);
 		crearButton.disableProperty().bind(conocimiento.denominacionProperty().isEmpty()
-										.or(conocimiento.nivelProperty().isNull()
-										.or(certificacionText.textProperty().isEmpty())));
+										.or(certificacionText.textProperty().isEmpty()));
 	}
 }

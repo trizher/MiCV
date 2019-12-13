@@ -76,7 +76,6 @@ public class ConocimientoDialogController extends Dialog<Conocimiento> implement
 		conocimiento.nivelProperty().bind(nivelCombo.valueProperty());
 		
 		Node crearButton = getDialogPane().lookupButton(CREAR_BUTTON_TYPE);
-		crearButton.disableProperty().bind(conocimiento.denominacionProperty().isEmpty()
-										.or(conocimiento.nivelProperty().isNull()));
+		crearButton.disableProperty().bind(conocimiento.denominacionProperty().isEmpty());
 	}
 }
