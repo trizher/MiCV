@@ -25,6 +25,9 @@ import javafx.scene.layout.GridPane;
 
 public class PersonalController implements Initializable{
 	
+	private ArrayList<Nacionalidad> nacionalidades = new ArrayList<Nacionalidad>();
+	private CV cv;
+	
     @FXML
     private GridPane view;
 
@@ -61,9 +64,6 @@ public class PersonalController implements Initializable{
 	@FXML
 	private DatePicker fechaNacimientoPicker;
 	
-	private ArrayList<Nacionalidad> nacionalidades = new ArrayList<Nacionalidad>();
-	private CV model = new CV();
-	
 	public PersonalController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PersonalView.fxml"));
 		loader.setController(this);
@@ -72,19 +72,22 @@ public class PersonalController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		model.setPersonal(new Personal());
+		cv = MainController.getModel();
+		cv.setPersonal(new Personal());
 		nacionalidades.addAll(LectorCSV.lectorNacionalidades());
 		paisCombo.getItems().addAll(LectorCSV.lectorPaises());
 		
-		model.getPersonal().identificacionProperty().bindBidirectional(dniText.textProperty());
-		model.getPersonal().nombreProperty().bindBidirectional(nombreText.textProperty());
-		model.getPersonal().apellidosProperty().bindBidirectional(apellidosText.textProperty());
-		model.getPersonal().fechaNacimientoProperty().bindBidirectional(fechaNacimientoPicker.valueProperty());
-		model.getPersonal().direccionProperty().bindBidirectional(direccionArea.textProperty());
-		model.getPersonal().codigoPostalProperty().bindBidirectional(codigoPostalText.textProperty());
-		model.getPersonal().localidadProperty().bindBidirectional(localidadText.textProperty());
-		model.getPersonal().paisProperty().bindBidirectional(paisCombo.valueProperty());
-		model.getPersonal().nacionalidadListProperty().bindBidirectional(nacionalidadListV.itemsProperty());
+		cv.getPersonal().identificacionProperty().bindBidirectional(dniText.textProperty());
+		cv.getPersonal().nombreProperty().bindBidirectional(nombreText.textProperty());
+		cv.getPersonal().apellidosProperty().bindBidirectional(apellidosText.textProperty());
+		cv.getPersonal().fechaNacimientoProperty().bindBidirectional(fechaNacimientoPicker.valueProperty());
+		cv.getPersonal().direccionProperty().bindBidirectional(direccionArea.textProperty());
+		cv.getPersonal().codigoPostalProperty().bindBidirectional(codigoPostalText.textProperty());
+		cv.getPersonal().localidadProperty().bindBidirectional(localidadText.textProperty());
+		cv.getPersonal().paisProperty().bindBidirectional(paisCombo.valueProperty());
+		cv.getPersonal().nacionalidadListProperty().bindBidirectional(nacionalidadListV.itemsProperty());
+		
+		quitarNacionalidadButton.disableProperty().bind(nacionalidadListV.getSelectionModel().selectedItemProperty().isNull());
 		
 	}
 
@@ -102,16 +105,27 @@ public class PersonalController implements Initializable{
 
 		Optional<Nacionalidad> result = dialog.showAndWait();
 		result.ifPresent(nacionalidad -> {
-			if(!model.getPersonal().getNacionalidadList().contains(nacionalidad)) {
-				model.getPersonal().getNacionalidadList().add(nacionalidad);
+			if(!cv.getPersonal().getNacionalidadList().contains(nacionalidad)) {
+				cv.getPersonal().getNacionalidadList().add(nacionalidad);
 			}
 		});
 	}
 
 	@FXML
 	void onQuitarNacionalidadAction(ActionEvent event) {
-		model.getPersonal().getNacionalidadList().remove(nacionalidadListV.getSelectionModel().getSelectedItem());
+		cv.getPersonal().getNacionalidadList().remove(nacionalidadListV.getSelectionModel().getSelectedItem());
 	}
+
+	public ComboBox<String> getPaisCombo() {
+		return paisCombo;
+	}
+
+	public void setPaisCombo(ComboBox<String> paisCombo) {
+		this.paisCombo = paisCombo;
+	}
+	
+	
+	
 
 
 }

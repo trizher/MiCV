@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dad.javafx.micv.model.CV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,8 @@ public class MainController implements Initializable{
 	private ContactoController contactoController = new ContactoController();
 	private ExperienciaController experienciaController = new ExperienciaController();
 	private ConocimientoController conocimientoController = new ConocimientoController();
+	
+	private static CV model = new CV();
 	
     @FXML
     private VBox root;
@@ -70,7 +73,6 @@ public class MainController implements Initializable{
 		experienciaTab.setContent(experienciaController.getView());
 		conocimientosTab.setContent(conocimientoController.getView());
 		
-		
 	}
 	
 
@@ -78,11 +80,9 @@ public class MainController implements Initializable{
 		return root;
 	}
 
-
-	public void setRoot(VBox root) {
-		this.root = root;
+	public static CV getModel() {
+		return model;
 	}
-
 
 	@FXML
     void onAbrirAction(ActionEvent event) {
@@ -101,7 +101,26 @@ public class MainController implements Initializable{
 
     @FXML
     void onNuevoAction(ActionEvent event) {
-    	System.out.println("nuevo");
+    	model.getPersonal().setIdentificacion("");
+    	model.getPersonal().setNombre("");
+    	model.getPersonal().setApellidos("");
+    	model.getPersonal().setFechaNacimiento(null);
+    	model.getPersonal().setDireccion("");
+    	model.getPersonal().setCodigoPostal("");
+    	model.getPersonal().setLocalidad("");
+    	personalController.getPaisCombo().getSelectionModel().clearSelection();
+    	model.getPersonal().setPais(null);
+    	model.getPersonal().setNacionalidadList(null);
+    	
+    	model.getContacto().emailsProperty().clear();
+    	model.getContacto().telefonosProperty().clear();
+    	model.getContacto().websProperty().clear();
+    	
+    	model.getFormacionList().clear();
+    	model.getExperienciasList().clear();
+    	model.getHabilidadesList().clear();
+    	
+    	
     }
 
     @FXML

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints halignment="RIGHT" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1000.0" minWidth="10.0" prefWidth="300.0" />
+   </columnConstraints>
+   <children>
+      <Label text="Denominación" />
+      <Label text="Empleador" GridPane.rowIndex="1" />
+      <Label text="Desde" GridPane.rowIndex="2" />
+      <Label text="Hasta" GridPane.rowIndex="3" />
+      <TextField fx:id="denominacionText" maxWidth="300.0" GridPane.columnIndex="1" />
+      <TextField fx:id="empleadorText" maxWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <DatePicker fx:id="desdePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <DatePicker fx:id="hastaPicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   </children>
+</GridPane>
