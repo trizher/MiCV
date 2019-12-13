@@ -1,5 +1,7 @@
 package dad.javafx.micv.model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,6 +16,7 @@ public class Telefono {
 		return this.numero;
 	}
 	
+	@XmlAttribute
 	public String getNumero() {
 		return this.numeroProperty().get();
 	}
@@ -26,6 +29,7 @@ public class Telefono {
 		return this.tipo;
 	}
 	
+	@XmlAttribute
 	public TipoTelefono getTipo() {
 		return this.tipoProperty().get();
 	}

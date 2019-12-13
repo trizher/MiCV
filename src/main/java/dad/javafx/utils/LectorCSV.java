@@ -21,7 +21,6 @@ public class LectorCSV {
 			String line = br.readLine();
 			while (null != line) {
 				nacionalidades.add(new Nacionalidad(line.split(SEPARATOR)[0]));
-				System.out.println(line.split(SEPARATOR)[0]);
 				line = br.readLine();
 			}
 
@@ -50,7 +49,6 @@ public class LectorCSV {
 			String line = br.readLine();
 			while (null != line) {
 				paises.add(line.split(SEPARATOR)[0]);
-				System.out.println(line.split(SEPARATOR)[0]);
 				line = br.readLine();
 			}
 

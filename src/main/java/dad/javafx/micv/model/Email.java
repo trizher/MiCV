@@ -1,5 +1,7 @@
 package dad.javafx.micv.model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -11,7 +13,7 @@ public class Email {
 		return this.direccion;
 	}
 	
-
+	@XmlAttribute
 	public String getDireccion() {
 		return this.direccionProperty().get();
 	}

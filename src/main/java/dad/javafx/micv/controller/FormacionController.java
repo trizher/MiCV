@@ -21,7 +21,6 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.HBox;
 import javafx.util.converter.LocalDateStringConverter;
-import javafx.util.converter.LocalDateTimeStringConverter;
 
 public class FormacionController implements Initializable{
 

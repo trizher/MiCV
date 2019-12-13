@@ -1,5 +1,7 @@
 package dad.javafx.micv.model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -10,8 +12,8 @@ public class Web {
 	public StringProperty urlProperty() {
 		return this.url;
 	}
-	
 
+	@XmlAttribute
 	public String getUrl() {
 		return this.urlProperty().get();
 	}
